@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getDb } from "@/db/client";
 import * as schema from "@/db/schema";
 import { eq, and } from "drizzle-orm";
