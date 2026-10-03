@@ -24,7 +24,7 @@ function asStringArray(value: unknown): string[] {
 }
 
 export async function persistDetail(detail: SymbolDetail, addToWatchlist = false, userId: string = "default-user") {
-  const db = getDb();
+  const db = getDb() as any;
   if (!db) return;
 
   try {
@@ -88,7 +88,7 @@ export async function persistDetail(detail: SymbolDetail, addToWatchlist = false
 }
 
 export async function persistQuote(quote: Quote) {
-  const db = getDb();
+  const db = getDb() as any;
   if (!db) return;
 
   try {
@@ -131,7 +131,7 @@ export async function persistQuote(quote: Quote) {
 }
 
 export async function getStoredDashboard(market: DashboardPayload["market"], provider: DashboardPayload["provider"], userId: string = "default-user"): Promise<DashboardPayload> {
-  const db = getDb();
+  const db = getDb() as any;
   if (!db) return { watchlist: [], market, provider };
 
   try {
@@ -197,7 +197,7 @@ export async function getStoredDashboard(market: DashboardPayload["market"], pro
 }
 
 export async function getStoredDetail(symbol: string): Promise<SymbolDetail | null> {
-  const db = getDb();
+  const db = getDb() as any;
   if (!db) return null;
 
   try {
@@ -267,7 +267,7 @@ export async function getStoredDetail(symbol: string): Promise<SymbolDetail | nu
 }
 
 export async function removeStoredWatchlistItem(symbol: string, userId: string = "default-user") {
-  const db = getDb();
+  const db = getDb() as any;
   if (!db) return;
 
   try {
@@ -284,7 +284,7 @@ export async function removeStoredWatchlistItem(symbol: string, userId: string =
 
 export async function getStoredQuotes(symbols: string[]): Promise<Quote[]> {
   if (!symbols.length) return [];
-  const db = getDb();
+  const db = getDb() as any;
   if (!db) return [];
 
   try {
