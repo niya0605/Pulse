@@ -14,6 +14,7 @@ export const auth = betterAuth({
   socialProviders: process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
     ? { google: { clientId: process.env.GOOGLE_CLIENT_ID, clientSecret: process.env.GOOGLE_CLIENT_SECRET } }
     : undefined,
+  trustedOrigins: ["https://pulse-tau-inky.vercel.app", "http://localhost:3000"],
   advanced: {
     cookies: {
       session_token: { attributes: { sameSite: "none", secure: true } },
