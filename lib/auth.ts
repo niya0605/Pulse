@@ -9,7 +9,7 @@ const db = getDb();
 export const auth = betterAuth({
   baseURL,
   secret: process.env.BETTER_AUTH_SECRET ?? "pY3K9mQ7vB2sJ4xN6cR8tW1zL5fH0dG3",
-  ...(db ? { database: drizzleAdapter(db, { provider: "postgresql", schema }) } : {}),
+  ...(db ? { database: drizzleAdapter(db, { provider: "pg", schema }) } : {}),
   emailAndPassword: { enabled: true },
   socialProviders: process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
     ? { google: { clientId: process.env.GOOGLE_CLIENT_ID, clientSecret: process.env.GOOGLE_CLIENT_SECRET } }
