@@ -1,0 +1,60 @@
+{
+  "name": "pulse",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "db:check": "drizzle-kit check",
+    "db:push": "drizzle-kit push"
+  },
+  "dependencies": {
+    "@ai-sdk/groq": "^1.2.9",
+    "@neondatabase/serverless": "^1.0.1",
+    "@tanstack/react-query": "^5.66.8",
+    "ai": "^4.3.19",
+    "better-auth": "^1.2.7",
+    "drizzle-orm": "^0.45.3",
+    "inngest": "^3.42.0",
+    "lucide-react": "^0.468.0",
+    "mysql2": "^3.24.5",
+    "next": "16.3.8",
+    "pg": "^8.23.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "recharts": "^2.15.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@tailwindcss/postcss": "^4.0.6",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitest/ui": "^5.0.3",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "16.3.8",
+    "happy-dom": "^20.14.5",
+    "tailwindcss": "^4.0.6",
+    "typescript": "^5.7.3",
+    "vitest": "^5.0.3"
+  },
+  "pnpmConfig": {
+    "onlyBuiltDependencies": [
+      "protobufjs",
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
+  }
+}
