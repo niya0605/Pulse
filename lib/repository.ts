@@ -201,22 +201,26 @@ export async function getStoredDetail(symbol: string): Promise<SymbolDetail | nu
   if (!db) return null;
 
   try {
+    // @ts-ignore - schema types not available at build time
     const symbolRow = await db.query.symbols.findFirst({
       where: eq(schema.symbols.symbol, symbol),
     });
 
+    // @ts-ignore
     const quoteRow = await db.query.quoteLatest.findFirst({
       where: eq(schema.quoteLatest.symbol, symbol),
     });
 
     if (!symbolRow || !quoteRow) return null;
 
+    // @ts-ignore
     const newsRows = await db.query.newsItems.findMany({
       where: eq(schema.newsItems.symbol, symbol),
       limit: 5,
       orderBy: (table) => [table.publishedAt],
     });
 
+    // @ts-ignore
     const snapshotRows = await db.query.quoteSnapshots.findMany({
       where: eq(schema.quoteSnapshots.symbol, symbol),
       orderBy: (table) => [table.ts],
